@@ -13,6 +13,8 @@ NOTE: If you strongly prefer to work locally on your own computer, you can total
 import random
 
 
+high_score = [100]
+
 def start_game():
     """Psuedo-code Hints
     
@@ -32,7 +34,6 @@ def start_game():
     """
     #TODO Exceeption Handling
     #TODO 
-    high_score = []
     name = input("Welcome to the Number Guessing Game, What is your name?  ") 
     again = "yes"
 
@@ -60,7 +61,14 @@ def start_game():
                 count += 1
                 continue
         print("Great job {}, It took you {} tries!".format(name,count))
+        if count < min(high_score):
+            print("Congrats! {} is the new high score!".format(count))
+            high_score.append(count)
+            
         again = input("Would you like to play again?  Yes/No ").lower()
+        #if again.lower() != "yes" or again.lower() != "no":
+        #    print("Inavlid Input")
+        #    break
         #if again.lower() == "yes":
         #    continue
         #elif again.lower() == "no":
