@@ -34,7 +34,8 @@ def start_game():
     """
     #TODO Exceeption Handling
     #TODO 
-    name = input("Welcome to the Number Guessing Game, What is your name?  ") 
+    name = input("""************************************************************
+ Welcome to the Number Guessing Game, What is your name? """) 
     again = "yes"
 
     while again == "yes":
@@ -64,17 +65,10 @@ def start_game():
         if count < min(high_score):
             print("Congrats! {} is the new high score!".format(count))
             high_score.append(count)
-            
-        again = input("Would you like to play again?  Yes/No ").lower()
-        #if again.lower() != "yes" or again.lower() != "no":
-        #    print("Inavlid Input")
-        #    break
-        #if again.lower() == "yes":
-        #    continue
-        #elif again.lower() == "no":
-        #    break
-        #else:
-        #    print(("Assuming you meant Yes with yoour response"))
+        again = input("Would you like to play again? Yes/No ").lower()
+        while again.lower() != "yes" and again.lower() != "no":    
+            again = input("Would you like to play again?  Yes/No: ").lower()
+        
     print("Thanks for playing {}! Have a good day!".format(name))  
 
 
