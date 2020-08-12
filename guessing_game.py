@@ -42,6 +42,8 @@ def start_game():
         answer = random.randrange(1,11)
         count = 1
         while True:
+            if min(high_score) < 11:
+                print("The current high score is {}, can you beat it?".format(min(high_score)))
             try:
                 guess = int(input("Hello {} pick a number between 1 and 10 ".format(name)))
             except ValueError:
